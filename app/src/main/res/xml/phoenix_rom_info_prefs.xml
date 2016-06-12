@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:layout="@layout/phoenix_logo" android:layout_width="fill_parent" android:layout_height="140.0dip" />
+    <PreferenceScreen android:icon="@drawable/ic_ota" android:title="PhoeniX ROM OTA Center">
+        <intent android:targetPackage="com.otaupdater" android:targetClass="com.otaupdater.OTAUpdaterActivity" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_xda" android:title="PhoeniX ROM S5 XDA Thread" android:summary="Click to View Our Xda thread for more info">
+        <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/showthread.php?t=2741302" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_web" android:title="PhoeniX ROM Official Website" android:summary="Click to View our official website">
+        <intent android:action="android.intent.action.VIEW" android:data="http://tdroms.com" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_face" android:title="PhoeniX ROM Official Facebook Page" android:summary="Click to View our Facebook page">
+        <intent android:action="android.intent.action.VIEW" android:data="https://www.facebook.com/pages/PhoeniX-ROM/497716460287317" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_twitter" android:title="PhoeniX ROM Official Twitter Page" android:summary="Click to View our Twitter page">
+        <intent android:action="android.intent.action.VIEW" android:data="https://twitter.com/TamirDa" />
+    </PreferenceScreen>
+    <PreferenceScreen android:icon="@drawable/ic_xda" android:title="tamirda XDA Profile" android:summary="Click to View tamirda's xda profile">
+        <intent android:action="android.intent.action.VIEW" android:data="http://forum.xda-developers.com/member.php?u=2739548" />
+    </PreferenceScreen>
+</PreferenceScreen>

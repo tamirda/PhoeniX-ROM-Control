@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:title="Phone mods" android:summary="Configure phone settings">
+        <com.wubydax.romcontrol.prefs.FilePreference  android:title="Record/Add Call Buttons" android:key="modcfg_avcr_button" android:summaryOn="Add call button shown" android:summaryOff="Record button shown" />
+        <SwitchPreference android:title="Incoming auto call record" android:key="auto_call_record_in" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <SwitchPreference android:title="Outgoing auto call record" android:key="auto_call_record_out" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/call_delay_entries" android:title="End Call Delay" android:key="db_call_delay" android:summary="%s" android:defaultValue="5000" android:dialogTitle="End Call Delay (ms)" android:positiveButtonText="Save" android:negativeButtonText="Cancel" android:entryValues="@array/call_delay_values" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Lockscreen Options" android:summary="Lockscreen mods and settings">
+        <SwitchPreference android:title="Enable to apply colors" android:key="link_lockscreen_colors" android:defaultValue="false" android:summaryOn="enabled" android:summaryOff="disabled" />
+        <SwitchPreference android:title="Lockscreen Rotation" android:key="lockscreen_rotate" android:defaultValue="false" android:summaryOn="Lockscreen rotation enabled" android:summaryOff="Lockscreen rotation disabled" />
+        <CheckBoxPreference android:title="Use Custom Carrier Text" android:key="custom_lock_carrier" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <com.wubydax.romcontrol.prefs.MyEditTextPreference android:title="Carrier Custom Text" android:defaultValue="" android:key="custom_lock_carrier_text" android:summary="Edit carrier label" android:dependency="custom_lock_carrier" android:dialogTitle="Set Custom Text" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Carrier Text" alphaSlider="true" android:defaultValue="-1" android:key="carrier_color" android:summary="Choose carrier color\nOnly for Pro Users" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/lockscreen_notif_entries" android:title="Notifications Number on Lockscreen" android:key="lockscreen_notifications" android:summary="Number of notification that are shown on lockscreen" android:defaultValue="3" android:entryValues="@array/lockscreen_notif_values" />
+        <CheckBoxPreference android:title="Quick Unlock" android:key="lockscreen_quick_unlock_control" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <CheckBoxPreference android:title="Pin Pad Scramble" android:key="lockscreen_scramble_pin_layout" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <SwitchPreference android:title="Next Alarm on Lockscreen" android:key="next_alarm" android:defaultValue="true" android:summaryOn="Hide" android:summaryOff="Show" />
+        <SwitchPreference android:key="lock_seconds" android:summaryOff="Off" android:summaryOn="On" android:defaultValue="false" android:title="Add Clock Seconds" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Next Alarm Text Color" alphaSlider="true" android:defaultValue="-1" android:key="next_alarm_color" android:summary="Choose color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Pinpad OK" android:key="keypad_ok_color" alphaSlider="true" android:defaultValue="-1" android:summary="Choose pinpad OK color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Pinpad Digits" alphaSlider="true" android:defaultValue="-1" android:key="keypad_digit_color" android:summary="Choose pinpad digit color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Pinpad Letters" alphaSlider="true" android:defaultValue="-1" android:key="keypad_letter_color" android:summary="Choose pinpad letter color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Clock Hours" alphaSlider="true" android:defaultValue="-1" android:key="kg_clock_hours_color" android:summary="Choose clock color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Clock Minutes" alphaSlider="true" android:defaultValue="-1" android:key="kg_clock_minutes_color" android:summary="Choose AMPM color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Clock Second" alphaSlider="true" android:defaultValue="-1" android:key="kg_clock_second_color" android:summary="Choose second color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Lockscreen Date" alphaSlider="true" android:defaultValue="-1" android:key="kg_date_color" android:summary="Choose date color\nOnly for Pro Users" />
+        <PreferenceCategory android:title="Scaled Resizing" />
+        <SwitchPreference android:title="Clock Scaling On/Off Toggle" android:key="scaling_toggle" android:defaultValue="false" android:summaryOn="On\nOnly for Pro Users" android:summaryOff="Off\nOnly for Pro Users" />
+        <com.wubydax.romcontrol.prefs.SeekBarPreference android:max="400" android:title="Clock Scaling" android:key="lockscreen_clock_scale" android:summary="Adjust clock size" android:dependency="scaling_toggle" android:defaultValue="300" min="150" unitsRight=" dp" />
+        <com.wubydax.romcontrol.prefs.SeekBarPreference android:max="325" android:title="Clock Scaling Seconds" android:key="seconds_clock_scale" android:summary="Adjust Seconds size" android:dependency="scaling_toggle" android:defaultValue="170" min="100" unitsRight=" dp" />
+        <com.wubydax.romcontrol.prefs.SeekBarPreference android:max="150" android:title="Clock Scaling Date" android:key="date_clock_scale" android:summary="Adjust Date size" android:dependency="scaling_toggle" android:defaultValue="70" min="50" unitsRight=" dp" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Recent Panel Options" android:summary="Recent Panel mods">
+        <SwitchPreference android:title="Recent Panel CPU, Network and Battery info" android:defaultValue="false" android:key="recents_info_view" android:summaryOn="Info is shown" android:summaryOff="Info is hidden" />
+        <SwitchPreference android:title="Enable Recent Panel blur effect" android:key="recents_blur_view" android:defaultValue="false" android:summaryOn="enabled\nOnly for Pro Users" android:summaryOff="disabled\nOnly for Pro Users" />
+        <SwitchPreference android:title="Recent Panel Quick Launch" android:defaultValue="false" android:key="recents_quick_launch" android:summaryOn="Quick Launch is shown" android:summaryOff="Quick Launch is hidden" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Touchwiz Launcher" android:summary="Choose mods and settings">
+        <SwitchPreference android:title="Wallpaper Scrolling" android:key="launcher_scroll" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <SwitchPreference android:title="Launcher Rotation" android:key="launcher_rotation" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/tw_effect_entries" android:title="Touchwiz Page Effect" android:key="tw_page_effect" android:defaultValue="1" android:entryValues="@array/tw_effect_values" />
+        <SwitchPreference android:title="Enable Icon colors" android:key="enable_icon_colors" android:defaultValue="false" android:summaryOn="Enabled\nOnly for Pro Users" android:summaryOff="Disabled\nOnly for Pro Users" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Icons color" android:key="launcher_icons_text_color" android:dependency="enable_icon_colors" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Emoji Changer Menu" android:summary="Choose between different Emoji Icons.">
+        <PreferenceCategory android:title="Chose your Emoji" />
+        <PreferenceScreen android:title="Install Google Emojis" android:key="script#emojiGoogle" android:summary="Reboot is required for changes to take effect" />
+        <PreferenceScreen android:title="Install Samsung Emojis" android:key="script#emojiSamsung" android:summary="Reboot is required for changes to take effect" />
+        <PreferenceScreen android:title="Install IOS Emojis" android:key="script#emojiIOS" android:summary="Reboot is required for changes to take effect" />
+        <PreferenceScreen android:title="Install Lollipop Emojis" android:key="script#emojiLollipop" android:summary="Reboot is required for changes to take effect" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="NFC Mods" android:summary="Choose mods and settings">
+        <com.wubydax.romcontrol.prefs.MyEditTextPreference android:title="NFC Icon Type" android:defaultValue="" android:key="nfc_icon_type" android:summary="Enable NFC Icon. REQUIRES REBOOT" android:dialogTitle="Enter text for type (Blank for Off, VZW or CITYZI or ATT or TMO for On." />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Settings App Mods" android:summary="Choose mods and settings">
+        <SwitchPreference android:title="@string/auto_adjust_touch_title" android:key="auto_adjust_touch" android:defaultValue="false" android:summary="@string/auto_adjust_touch_summary" />
+        <SwitchPreference android:title="Multiwindow" android:key="multi_window_enabled"  android:summaryOn="Multiwindow is enabled" android:defaultValue="true" android:summaryOff="Multiwindow is disabled" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/settings_columns_entries" android:title="Settings Dashboard Columns" android:key="settings_layout_num" android:defaultValue="1" android:entryValues="@array/settings_columns_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/fav_settings_columns_entries" android:title="Settings Favorites Columns" android:key="settings_fav_columns" android:defaultValue="3" android:entryValues="@array/fav_settings_columns_values" />
+    </PreferenceScreen>
+    <SwitchPreference android:title="Email Exchange Security" android:key="email_security" android:summaryOn="Disabled" android:summaryOff="Enabled" />
+    <PreferenceScreen android:title="Power Menu Extended" android:summary="Customize long press power">
+        <SwitchPreference android:title="Power Menu Style" android:key="menu_mode" android:defaultValue="true" android:summaryOn="S7 Power Menu" android:summaryOff="S5 Power Menu" />
+        <CheckBoxPreference android:title="Power Off" android:key="power_off" android:defaultValue="true" android:summaryOn="Power off is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Data Mode" android:key="data_net" android:defaultValue="false" android:summaryOn="Data mode is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Airplane Mode" android:key="airplane_mode" android:defaultValue="true" android:summaryOn="Airplane mode is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Restart Menu" android:key="restart_menu" android:defaultValue="true" android:summaryOn="Restart menu is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Flashlight" android:key="flashlight" android:defaultValue="false" android:summaryOn="Flashlight is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Screen Recorder" android:key="screen_record" android:defaultValue="false" android:summaryOn="Screenrecorder is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Screenshot" android:key="screenshot" android:defaultValue="false" android:summaryOn="Screenshot is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Emergency Mode" android:key="emergency" android:defaultValue="true" android:summaryOn="Emergency mode is shown in menu" android:summaryOff="Removed" />
+        <CheckBoxPreference android:title="Volume Toggles" android:key="silent_button" android:defaultValue="false" android:summaryOn="DISABLE This Option when using S7 Menu Style \n Or you will have Bootloop!" android:summaryOff="Disabled" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Mokee Listview Animations">
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/listview_animation_entries" android:title="Listview animation" android:defaultValue="0" android:key="listview_animation" android:summary="%s" android:dependency="listview_animation" android:entryValues="@array/listview_animation_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/listview_interpolator_entries" android:title="Listview interpolator" android:defaultValue="0" android:key="listview_interpolator" android:summary="%s" android:dependency="listview_interpolator" android:entryValues="@array/listview_interpolator_values" />
+    </PreferenceScreen>
+    <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/immersive_entries" android:title="Immersive Mode (Fullscreen)" android:defaultValue="immersive.full" android:key="policy_control" android:summary="%s" android:entryValues="@array/immersive_values" />
+</PreferenceScreen>

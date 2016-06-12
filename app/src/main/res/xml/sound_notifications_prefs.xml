@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:title="@string/volbtn_music_controls_title" android:summary="@string/volbtn_music_controls_summary">
+        <SwitchPreference android:title="@string/volbtn_toggle_title" android:key="volbtn_music_controls" android:defaultValue="false" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/volbtn_timeout_entries" android:title="@string/volbtn_timeout_title" android:key="volbtn_timeout" android:defaultValue="500" android:summary="@string/volbtn_timeout_summary" android:dependency="volbtn_music_controls" android:entryValues="@array/volbtn_timeout_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/volbtn_action_entries" android:title="@string/volbtn_vol_up_title" android:key="volbtn_vol_up" android:defaultValue="87" android:summary="@string/volbtn_vol_up_summary" android:dependency="volbtn_music_controls" android:entryValues="@array/volbtn_action_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/volbtn_action_entries" android:title="@string/volbtn_vol_down_title" android:key="volbtn_vol_down"  android:defaultValue="88" android:summary="@string/volbtn_vol_down_summary" android:dependency="volbtn_music_controls" android:entryValues="@array/volbtn_action_values" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="System sound levels" android:summary="Select the default sound level">
+        <PreferenceScreen android:title="Stock Volume" android:key="script#volume_stock" android:summary="Stock sound levels" />
+        <PreferenceScreen android:title="Mid Volume" android:key="script#volume_mid" android:summary="Mild Level sound increase" />
+        <PreferenceScreen android:title="Loud Boost" android:key="script#volume_loud" android:summary="Medium Level sound increase" />
+        <PreferenceScreen android:title="Extreme Boost" android:key="script#volume_extreme" android:summary="Extra Loud sound increase" />
+    </PreferenceScreen>
+    <PreferenceScreen android:title="System sound toggles" android:summary="Enable or disable system sounds" >
+        <PreferenceScreen android:title="Boot Sounds">
+            <PreferenceScreen android:title="Disable Boot Sounds" android:key="script#disable_boot_sounds" android:summary="Disables the boot sounds" />
+            <PreferenceScreen android:title="Enable Boot Sounds" android:key="script#enable_boot_sounds" android:summary="Enables the boot sounds" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Volume Slider Sound">
+            <PreferenceScreen android:title="Disable Volume Slider" android:key="script#disable_volume_sounds" android:summary="Disables volume slider sounds" />
+            <PreferenceScreen android:title="Enable Volume Slider" android:key="script#enable_volume_sounds" android:summary="Enables volume slider sounds" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Charging Sounds">
+            <PreferenceScreen android:title="Disable Charging Sounds" android:key="script#disable_charging_sounds" android:summary="Disables all charging sounds" />
+            <PreferenceScreen android:title="Enable Charging Sounds" android:key="script#enable_charging_sounds" android:summary="Enables all charging sounds" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="ScreenShot Sound">
+            <PreferenceScreen android:title="Disable ScreenShot Sounds" android:key="script#disable_screenshot_sound" android:summary="Disables screenshot sound" />
+            <PreferenceScreen android:title="Enable ScreenShot Sounds" android:key="script#enable_screenshot_sound" android:summary="Enables screenshot sound" />
+        </PreferenceScreen>
+    </PreferenceScreen>
+    <PreferenceScreen android:title="Notifications and Dialogue" android:summary="Select options">
+        <SwitchPreference android:title="Make Ongoing Notifications Removable" android:key="ongoing_notifications" android:defaultValue="false" android:summaryOn="Ongoing Notifications are removeable\nOnly for Pro Users" android:summaryOff="Ongoing Notifications are permanent\nOnly for Pro Users" />
+        <SwitchPreference android:title="Low Battery Notifications" android:key="battery_notif" android:defaultValue="true" android:summaryOn="Low battery warnings are enabled" android:summaryOff="Low battery warnings are disabled" />
+        <SwitchPreference android:title="Full Battery Notifications" android:key="battery_full_notif" android:defaultValue="true" android:summaryOn="Full battery notification enabled" android:summaryOff="Full battery notification disabled" />
+        <SwitchPreference android:title="USB Plugged/Unplugged Wake" android:key="no_wake_unplugged" android:defaultValue="true" android:summaryOn="Wake when plugged/unplugged" android:summaryOff="Do not Wake" />
+        <SwitchPreference android:title="Power Saving Mode Notifications" android:key="psm_notif" android:defaultValue="true" android:summaryOn="Power Saving Mode notification is enabled" android:summaryOff="Power Saving Mode notification is disabled" />
+        <SwitchPreference android:title="Gray Statusbar on PSM" android:key="psm_notif_color" android:defaultValue="true" android:summaryOn="PSM gray status bar is enabled\nOnly for Pro Users" android:summaryOff="PSM gray status bar is disabled\nOnly for Pro Users" />
+        <SwitchPreference android:title="Enable IME Notification" android:key="enable_ime_notif" android:defaultValue="true" android:summaryOn="Input method choice is active" android:summaryOff="Input method choice is hidden" />
+        <SwitchPreference android:title="Enable SD Notification" android:key="storage_notif" android:defaultValue="true" android:summaryOn="Storage Notification is active" android:summaryOff="Storage Notification is hidden" />
+        <SwitchPreference android:title="High Volume Warning" android:key="volume_warning_toggle" android:defaultValue="true" android:summaryOn="Volume Warning is shown" android:summaryOff="Volume Warning is disable" />
+        <SwitchPreference android:title="Heads Up Notifications" android:key="heads_up_notifications_enabled" android:defaultValue="true" android:summaryOn="Heads Up Enabled" android:summaryOff="Heads Up Disabled" />
+        <SwitchPreference android:title="Cover Warnings" android:key="cover_warnings" android:defaultValue="true" android:summaryOn="Cover Warning is shown" android:summaryOff="Cover Warning is disable" />
+    </PreferenceScreen>
+</PreferenceScreen>

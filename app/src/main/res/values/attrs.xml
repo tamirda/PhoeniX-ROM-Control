@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ScrimInsetsView">
+        <attr name="insetForeground" format="reference|color" />
+    </declare-styleable>
+    <declare-styleable name="NavDrawerIcon">
+        <attr name="tint" format="reference|color" />
+    </declare-styleable>
+    <!--<declare-styleable name=""-->
+    <attr name="FabcolorPrimary" format="color"/>
+    <attr name="FabcolorPrimaryDark" format="color"/>
+    <attr name="FabtextColorPrimary" format="color"/>
+    <declare-styleable name="ThumbnailListPreference">
+        <attr name="drawableArray" format="reference" />
+        <attr name="entryList" format="reference" />
+        <attr name="entryValuesList" format="reference" />
+        <attr name="entryDefault" format="string" />
+    </declare-styleable>
+    <attr name="FabMenuBcgColorPrimary" format="color"/>
+<attr name="nav_drawer_bg_color" format="color"/>
+    <attr name="myAccentColor" format="color"/>
+<attr name="nav_item_color_selector" format="reference|color"/>
+    <attr name="nav_drawer_header" format="reference"/>
+</resources>

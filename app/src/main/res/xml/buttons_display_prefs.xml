@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen android:title="Customize Buttons" android:summary="Choose button behaviors">
+        <SwitchPreference android:title="Disable Haptic Feedback" android:key="disable_haptic" android:defaultValue="on" android:summaryOn="Extra haptic disabled" android:summaryOff="Extra haptic enabled" />
+        <PreferenceScreen android:title="Home Button" android:summary="Choose button behaviors">
+            <SwitchPreference android:title="Enable Home Wake" android:key="homewake_toggle" android:defaultValue="true" android:summaryOn="Home button will wake phone" android:summaryOff="Home button now disabled" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/home_doubletap" android:defaultValue="8" android:title="Home DoubleTap" android:key="home_doubletap_button" android:summary="%s" android:dependency="home_doubletap_button" android:entryValues="@array/home_doubletap_values" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/home_longpress" android:defaultValue="7" android:title="Home LongPress" android:key="home_longpress_button" android:summary="%s" android:dependency="home_longpress_button" android:entryValues="@array/home_longpress_values" />
+            <PreferenceCategory android:title="Application Assignments">
+                <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="Home DoubleTap App" android:key="doubletap_custom_app" />
+                <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="Home LongPress App" android:key="longpress_custom_app" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Left Capacitive Key" android:summary="Choose button behaviors" >
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/left_shortpress" android:title="Set Left Key" android:defaultValue="1" android:key="left_shortpress_button" android:summary="%s" android:dependency="left_shortpress_button" android:entryValues="@array/left_shortpress_values" />
+            <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="Left Shortpress App" android:key="leftshort_custom_app"/>
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/left_longpress" android:title="Longpress Left Key" android:defaultValue="1" android:key="left_longpress_button" android:summary="%s" android:dependency="left_longpress_button" android:entryValues="@array/left_longpress_values" />
+            <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="Left Longpress App" android:key="left_custom_app" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Right Capacitive Key" android:summary="Choose button behaviors">
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/right_longpress" android:title="Longpress Right Key" android:defaultValue="1" android:key="right_longpress_button" android:summary="%s" android:dependency="right_longpress_button" android:entryValues="@array/right_longpress_values" />
+            <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="Right Longpress App" android:key="right_custom_app" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Power Button" android:summary="Choose button behaviors" >
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/power_doubletap" android:defaultValue="0" android:title="DoubleTap Assignment" android:key="power_doubletap_button" android:summary="%s" android:dependency="power_doubletap_button" android:entryValues="@array/power_doubletap_values" />
+            <com.wubydax.romcontrol.prefs.IntentDialogPreference includeSearch="true" setSeparatorString="\##" android:title="DoubleTap Application" android:key="power_custom_app" />
+        </PreferenceScreen>
+    </PreferenceScreen>
+  <PreferenceCategory android:title="Reboot Required for Below Options">
+        <SwitchPreference android:title="Allow 360 Rotation" android:key="all_rotations" android:defaultValue="false" android:summaryOn="Currently enabled\nOnly for Pro Users" android:summaryOff="All rotations disabled\nOnly for Pro Users" />
+    </PreferenceCategory>
+</PreferenceScreen>
